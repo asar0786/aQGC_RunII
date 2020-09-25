@@ -931,6 +931,7 @@ void model(const char *samplefilename,
                 double err = sqrt(e1*e1+e2*e2)*w;//TMath::Abs(((1-2*w)*e1*e1 + w*w*e2*e2 )/(hists[1]->GetBinContent(i)*hists[1]->GetBinContent(i)));
                 hft1->SetBinContent(temp_size/2 + 1 + temp_numbers[j],histo_aqgc[j]->GetBinContent(i)/hists[1]->GetBinContent(i));
                 hft1->SetBinError(temp_size/2 + 1 + temp_numbers[j],err);
+//                if (DEBUG) std::cout << "ft1: " <<j<<", aQGC content: "<< histo_aqgc[j]->GetBinContent(i) << " EWK content: " << hists[1]->GetBinContent(i) << " err: " << err << " hfs0 bin content: " << hfs0->GetBinContent(j-0+1) <<" w: "<<w<<" Bin info in hfs0: "<<temp_size/2 + 1 + temp_numbers[j-0]<< std::endl;
             }
             else if(j>=35 && j<70)
             {
@@ -1076,7 +1077,8 @@ void model(const char *samplefilename,
                 double err = sqrt(e1*e1+e2*e2)*w;//TMath::Abs(((1-2*w)*e1*e1 + w*w*e2*e2 )/(hists[1]->GetBinContent(i)*hists[1]->GetBinContent(i)));
                 hfs0->SetBinContent(temp_size/2 + 1 + temp_numbers[j-526],histo_aqgc[j]->GetBinContent(i)/hists[1]->GetBinContent(i));
                 hfs0->SetBinError(temp_size/2 + 1 + temp_numbers[j-526],err);
-                if (DEBUG) std::cout << "fs0 histo no. \t " <<j<<" :  aQGC content "<< histo_aqgc[j]->GetBinContent(i) << " : EWK content " << hists[1]->GetBinContent(i) << " : aQGC err " << histo_aqgc[j]->GetBinError(i) << " : EWK err" <<  hists[1]->GetBinError(i) << " err: " << err << " : hfs0 bin content " << hfs0->GetBinContent(j-526+1) <<" w: "<<w<<" Bin info in hfs0: "<<temp_size/2 + 1 + temp_numbers[j-526]<< std::endl;
+                if (DEBUG) std::cout << "fs0 histo no.: " <<j<<" aQGC content: "<< histo_aqgc[j]->GetBinContent(i) << " EWK content: " << hists[1]->GetBinContent(i) << " err: " << err << " hfs0 bin content: " << hfs0->GetBinContent(j-526+1) <<" w: "<<w<<" Bin info in hfs0: "<<temp_size/2 + 1 + temp_numbers[j-526]<< std::endl;
+                //if (DEBUG) std::cout << "fs0 histo no.: " <<j<<" aQGC content: "<< histo_aqgc[j]->GetBinContent(i) << " EWK content: " << hists[1]->GetBinContent(i) << " aQGC err: " << histo_aqgc[j]->GetBinError(i) << " EWK err: " <<  hists[1]->GetBinError(i) << " err: " << err << " hfs0 bin content: " << hfs0->GetBinContent(j-526+1) <<" w: "<<w<<" Bin info in hfs0: "<<temp_size/2 + 1 + temp_numbers[j-526]<< std::endl;
             }
             else if(j>=569 && j<602) 
             {
